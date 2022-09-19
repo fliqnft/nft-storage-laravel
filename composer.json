@@ -1,0 +1,49 @@
+{
+    "name": "fliq/nft-storage",
+    "description": "Upload to nft.storage with laravel.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Pav",
+            "email": "_@christians.email",
+            "homepage": "https://christianpav.com"
+        }
+    ],
+    "homepage": "https://github.com/fliq/nft-storage",
+    "keywords": ["Laravel", "NftStorage"],
+    "require": {
+        "illuminate/support": "~9",
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~7",
+        "pestphp/pest": "^1.22",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fliq\\NftStorage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fliq\\NftStorage\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fliq\\NftStorage\\NftStorageServiceProvider"
+            ],
+            "aliases": {
+                "NftStorage": "Fliq\\NftStorage\\Facades\\NftStorage"
+            }
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
