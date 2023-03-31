@@ -35,7 +35,7 @@ class NftStorageServiceProvider extends ServiceProvider
 
         // Register the service the package provides.
         $this->app->singleton('nft-storage', function ($app) {
-            return new NftStorage(config('nft-storage.apiKey'));
+            return new NftStorage((string) config('nft-storage.apiKey'));
         });
     }
 

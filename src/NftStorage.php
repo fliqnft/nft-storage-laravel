@@ -2,23 +2,19 @@
 
 namespace Fliq\NftStorage;
 
-
 use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Http;
 
 class NftStorage
 {
-
     public function __construct(private readonly string $apiKey)
     {
         $this->client = new Client([
             'base_uri' => 'https://api.nft.storage',
-            'headers'  => [
-                'Authorization' => "Bearer $this->apiKey"
-            ]
+            'headers' => [
+                'Authorization' => "Bearer $this->apiKey",
+            ],
         ]);
     }
-
 
     public function upload($resource, array $options = [])
     {
@@ -26,7 +22,6 @@ class NftStorage
 
         return $uploader->handle($resource)->wait();
     }
-
 
     public function ls()
     {
@@ -37,7 +32,5 @@ class NftStorage
 
     public function read(string $uri)
     {
-
     }
-
 }

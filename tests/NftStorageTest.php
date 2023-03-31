@@ -1,4 +1,5 @@
 <?php
+
 // NftStorageTest
 
 use Fliq\NftStorage\NftStorage;
@@ -15,7 +16,7 @@ it('lists stored nft files', function () {
 });
 
 it('uploads files', function () {
-    $resource = Utils::tryFopen(__DIR__ . '/uploads/foo.txt', 'r');
+    $resource = Utils::tryFopen(__DIR__.'/uploads/foo.txt', 'r');
 
     $response = $this->storage->upload($resource);
 
@@ -29,7 +30,7 @@ it('can upload json', function () {
     $response = $this->storage->upload([
         'meta.json' => [
             'foo' => 'bar',
-        ]
+        ],
     ]);
 
     expect($response['ok'])

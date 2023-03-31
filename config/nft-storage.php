@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'apiKey' => env('NFT_STORAGE_KEY'),
+    'apiKey' => env('NFT_STORAGE_KEY', ''),
 ];
